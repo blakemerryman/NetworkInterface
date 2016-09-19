@@ -1,3 +1,5 @@
 # Protocol-Oriented REST Client
 
 This was created for educational purposes and presented at Nashville CocoaHeads on August 31, 2016.
+
+The protocol and default implementation are located in the `/Sources/RESTInterface.swift` file.
