@@ -15,9 +15,7 @@ internal enum NetworkInterfaceMethod: String {
 }
 
 internal extension NetworkInterfaceMethod {
-
     var methodString: String {
         return self.rawValue.uppercased()
     }
-
 }

@@ -12,37 +12,41 @@ import Foundation
 
 public extension NetworkInterface {
 
+    var session: URLSession {
+        return URLSession.shared
+    }
+
     func post(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-        let dataTask = buildDataTask(method: .post, endpoint: endpoint, bodyData: bodyData, completion: completion)
+        let dataTask = session.dataTask(method: .post, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }
 
     func put(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-        let dataTask = buildDataTask(method: .put, endpoint: endpoint, bodyData: bodyData, completion: completion)
+        let dataTask = session.dataTask(method: .put, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }
 
     func get(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-        let dataTask = buildDataTask(method: .get, endpoint: endpoint, bodyData: bodyData, completion: completion)
+        let dataTask = session.dataTask(method: .get, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }
 
     func head(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-        let dataTask = buildDataTask(method: .head, endpoint: endpoint, bodyData: bodyData, completion: completion)
+        let dataTask = session.dataTask(method: .head, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }
 
     func delete(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-        let dataTask = buildDataTask(method: .delete, endpoint: endpoint, bodyData: bodyData, completion: completion)
+        let dataTask = session.dataTask(method: .delete, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }

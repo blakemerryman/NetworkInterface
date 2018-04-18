@@ -14,7 +14,8 @@ public typealias NetworkInterfaceCompletionHandler = (Data?, URLResponse?, Error
 
 public protocol NetworkInterface {
 
-    // MARK: - Base URL & Request Headers
+    /// The session to use for all URL requests.
+    var session: URLSession { get }
 
     /// The base URL string for all URL requests.
     var baseURLPath: String { get }

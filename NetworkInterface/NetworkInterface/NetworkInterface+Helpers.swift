@@ -41,21 +41,3 @@ public extension NetworkInterface {
     }
 
 }
-
-// MARK: - Data Task Builder
-
-internal extension NetworkInterface {
-
-    func buildDataTask(method: NetworkInterfaceMethod,
-                       endpoint: String,
-                       bodyData: Data?,
-                       completion: @escaping NetworkInterfaceCompletionHandler) -> URLSessionDataTask {
-
-        let request = URLRequest(method: method, baseURLPath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData)
-
-        let dataTask = URLSession.shared.dataTask(with: request, completionHandler: completion)
-
-        return dataTask
-    }
-
-}

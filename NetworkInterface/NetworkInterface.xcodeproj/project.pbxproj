@@ -15,6 +15,7 @@
 		461FD3A42086904C00BCDE59 /* NetworkInterface+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FD3A32086904C00BCDE59 /* NetworkInterface+Helpers.swift */; };
 		461FD3A6208690DF00BCDE59 /* NetworkInterfaceMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FD3A5208690DF00BCDE59 /* NetworkInterfaceMethod.swift */; };
 		461FD3A82086933400BCDE59 /* URLRequest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461FD3A72086933400BCDE59 /* URLRequest+Helpers.swift */; };
+		4686593A2087A3490026790C /* URLSession+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468659392087A3490026790C /* URLSession+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		461FD3A32086904C00BCDE59 /* NetworkInterface+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkInterface+Helpers.swift"; sourceTree = "<group>"; };
 		461FD3A5208690DF00BCDE59 /* NetworkInterfaceMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterfaceMethod.swift; sourceTree = "<group>"; };
 		461FD3A72086933400BCDE59 /* URLRequest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Helpers.swift"; sourceTree = "<group>"; };
+		468659392087A3490026790C /* URLSession+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				461FD3A32086904C00BCDE59 /* NetworkInterface+Helpers.swift */,
 				461FD3A5208690DF00BCDE59 /* NetworkInterfaceMethod.swift */,
 				461FD3A72086933400BCDE59 /* URLRequest+Helpers.swift */,
+				468659392087A3490026790C /* URLSession+Helpers.swift */,
 				461FD38720868A0300BCDE59 /* Info.plist */,
 			);
 			path = NetworkInterface;
@@ -212,6 +215,7 @@
 			files = (
 				461FD3A22086901C00BCDE59 /* NetworkInterface+Default.swift in Sources */,
 				461FD3A82086933400BCDE59 /* URLRequest+Helpers.swift in Sources */,
+				4686593A2087A3490026790C /* URLSession+Helpers.swift in Sources */,
 				461FD39E20868A2500BCDE59 /* NetworkInterface.swift in Sources */,
 				461FD3A6208690DF00BCDE59 /* NetworkInterfaceMethod.swift in Sources */,
 				461FD3A42086904C00BCDE59 /* NetworkInterface+Helpers.swift in Sources */,
