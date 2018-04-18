@@ -17,38 +17,48 @@ public extension NetworkInterface {
     }
 
     func post(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
-
-        let dataTask = session.dataTask(method: .post, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
-
-        dataTask.resume()
+        session.dataTask(method: .post,
+                         basePath: baseURLPath,
+                         endpoint: endpoint,
+                         headers: requestHeaders,
+                         bodyData: bodyData,
+                         completion: completion).resume()
     }
 
     func put(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
-
-        let dataTask = session.dataTask(method: .put, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
-
-        dataTask.resume()
+        session.dataTask(method: .put,
+                         basePath: baseURLPath,
+                         endpoint: endpoint,
+                         headers: requestHeaders,
+                         bodyData: bodyData,
+                         completion: completion).resume()
     }
 
     func get(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
-
-        let dataTask = session.dataTask(method: .get, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
-
-        dataTask.resume()
+        session.dataTask(method: .get,
+                         basePath: baseURLPath,
+                         endpoint: endpoint,
+                         headers: requestHeaders,
+                         bodyData: bodyData,
+                         completion: completion).resume()
     }
 
     func head(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
-
-        let dataTask = session.dataTask(method: .head, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
-
-        dataTask.resume()
+        session.dataTask(method: .head,
+                         basePath: baseURLPath,
+                         endpoint: endpoint,
+                         headers: requestHeaders,
+                         bodyData: bodyData,
+                         completion: completion).resume()
     }
 
     func delete(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
-
-        let dataTask = session.dataTask(method: .delete, basePath: baseURLPath, endpoint: endpoint, headers: requestHeaders, bodyData: bodyData, completion: completion)
-
-        dataTask.resume()
+        session.dataTask(method: .delete,
+                         basePath: baseURLPath,
+                         endpoint: endpoint,
+                         headers: requestHeaders,
+                         bodyData: bodyData,
+                         completion: completion).resume()
     }
 
 }
