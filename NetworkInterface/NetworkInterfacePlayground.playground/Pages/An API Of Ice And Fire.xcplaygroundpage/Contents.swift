@@ -1,12 +1,13 @@
 //: [Previous](@previous)
 
 import Foundation
+import NetworkInterface
 import XCPlayground
 XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 
 // MARK: -
 
-protocol ASOIAFInterfaceable: RESTInterfaceable {}
+protocol ASOIAFInterfaceable: NetworkInterface {}
 
 extension ASOIAFInterfaceable {
     
@@ -35,9 +36,9 @@ struct ASOIAF: ASOIAFInterfaceable {
         
     }
     
-    func printData(data: NSData?) {
+    func printData(data: Data?) {
         
-        guard let userInfo = self.decodeJSON(fromData: data) else {
+        guard let userInfo = self.decodeJSONObject(fromData: data) else {
             return
         }
         

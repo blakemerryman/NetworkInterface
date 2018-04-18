@@ -8,46 +8,41 @@
 
 import Foundation
 
+// MARK: - Default Implementation
+
 public extension NetworkInterface {
 
-    var jsonEncoder: JSONEncoder {
-        let encoder = JSONEncoder()
-        return encoder
-    }
+    func post(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-    // MARK: - Default Implementation for API REST Methods
-
-    func post<Body: Encodable>(_ endpoint: String, body: Body? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
-
-        let dataTask = buildDataTask(method: .post, endpoint: endpoint, body: body, completion: completion)
+        let dataTask = buildDataTask(method: .post, endpoint: endpoint, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }
 
-    func put<Body: Encodable>(_ endpoint: String, body: Body? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
+    func put(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-        let dataTask = buildDataTask(method: .put, endpoint: endpoint, body: body, completion: completion)
-
-        dataTask.resume()
-    }
-
-    func get<Body: Encodable>(_ endpoint: String, body: Body? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
-
-        let dataTask = buildDataTask(method: .get, endpoint: endpoint, body: body, completion: completion)
+        let dataTask = buildDataTask(method: .put, endpoint: endpoint, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }
 
-    func head<Body: Encodable>(_ endpoint: String, body: Body? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
+    func get(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-        let dataTask = buildDataTask(method: .head, endpoint: endpoint, body: body, completion: completion)
+        let dataTask = buildDataTask(method: .get, endpoint: endpoint, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }
 
-    func delete<Body: Encodable>(_ endpoint: String, body: Body? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
+    func head(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
 
-        let dataTask = buildDataTask(method: .delete, endpoint: endpoint, body: body, completion: completion)
+        let dataTask = buildDataTask(method: .head, endpoint: endpoint, bodyData: bodyData, completion: completion)
+
+        dataTask.resume()
+    }
+
+    func delete(_ endpoint: String, bodyData: Data? = nil, completion: @escaping NetworkInterfaceCompletionHandler) {
+
+        let dataTask = buildDataTask(method: .delete, endpoint: endpoint, bodyData: bodyData, completion: completion)
 
         dataTask.resume()
     }

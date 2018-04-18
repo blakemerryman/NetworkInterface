@@ -22,15 +22,12 @@ public protocol NetworkInterface {
     /// The headers to use for all URL requests.
     var requestHeaders: [String: String] { get }
 
-    /// The JSON encoder used to encode the request's body parameters.
-    var jsonEncoder: JSONEncoder { get }
-
     // MARK: - REST Methods
 
-    func post<Body: Encodable>(_ endpoint: String, body: Body?, completion: @escaping NetworkInterfaceCompletionHandler)
-    func put<Body: Encodable>(_ endpoint: String, body: Body?, completion: @escaping NetworkInterfaceCompletionHandler)
-    func get<Body: Encodable>(_ endpoint: String, body: Body?, completion: @escaping NetworkInterfaceCompletionHandler)
-    func head<Body: Encodable>(_ endpoint: String, body: Body?, completion: @escaping NetworkInterfaceCompletionHandler)
-    func delete<Body: Encodable>(_ endpoint: String, body: Body?, completion: @escaping NetworkInterfaceCompletionHandler)
+    func post(_ endpoint: String, bodyData: Data?, completion: @escaping NetworkInterfaceCompletionHandler)
+    func put(_ endpoint: String, bodyData: Data?, completion: @escaping NetworkInterfaceCompletionHandler)
+    func get(_ endpoint: String, bodyData: Data?, completion: @escaping NetworkInterfaceCompletionHandler)
+    func head(_ endpoint: String, bodyData: Data?, completion: @escaping NetworkInterfaceCompletionHandler)
+    func delete(_ endpoint: String, bodyData: Data?, completion: @escaping NetworkInterfaceCompletionHandler)
 
 }
