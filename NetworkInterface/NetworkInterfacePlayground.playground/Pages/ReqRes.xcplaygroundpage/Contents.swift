@@ -1,12 +1,13 @@
 //: [Previous](@previous)
 
 import Foundation
+import NetworkInterface
 import XCPlayground
 XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 
 // MARK: -
 
-protocol ReqResInterfaceable: RESTInterfaceable {}
+protocol ReqResInterfaceable: NetworkInterface {}
 
 extension ReqResInterfaceable {
     
@@ -40,20 +41,27 @@ struct ReqResClient: ReqResInterfaceable {
     }
     
     func createUser(name: String, job: String) {
-        
-        let params = [ "name" : name, "job"  : job ]
-        
-        post("/users", parameters: params) { (data, response, error) in
+
+        struct UserInfo: Encodable {
+            let name: String
+            let job: String
+        }
+
+        let userInfo = UserInfo(name: name, job: job)
+
+        let userInfoData = try? JSONEncoder().encode(userInfo)
+
+        post("/users", bodyData: userInfoData) { (data, response, error) in
             
             self.printData(data)
         }
     }
     
-    func deleteUser(userId: Int) {
+    func deleteUser(_ userId: Int) {
         
         delete("/users/\(userId)") { (data, response, error) in
             print("--------------------------------------------------")
-            print("STATUS CODE --- \( (response as? NSHTTPURLResponse)!.statusCode )")
+            print("STATUS CODE --- \( (response as? HTTPURLResponse)!.statusCode )")
         }
         
     }
@@ -61,9 +69,9 @@ struct ReqResClient: ReqResInterfaceable {
     
     // MARK: - ------------------------------------------------------------
     
-    func printData(data: NSData?) {
+    func printData(_ data: Data?) {
         
-        guard let userInfo = self.decodeJSON(fromData: data) else {
+        guard let userInfo = self.decodeJSONObject(fromData: data) else {
             return
         }
         

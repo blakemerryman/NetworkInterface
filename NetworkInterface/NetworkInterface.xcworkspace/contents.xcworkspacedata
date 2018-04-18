@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/blakemerryman/Documents/Personal/Protocol-Oriented-REST-Client/README.md">
+   </FileRef>
+   <FileRef
+      location = "group:NetworkInterfacePlayground.playground">
+   </FileRef>
+   <FileRef
+      location = "group:NetworkInterface.xcodeproj">
+   </FileRef>
+</Workspace>

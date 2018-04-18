@@ -1,12 +1,12 @@
 
 import Foundation
+import NetworkInterface
 import XCPlayground
 XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 
 // MARK: -
 
-
-protocol GithubInterfaceable: RESTInterfaceable { }
+protocol GithubInterfaceable: NetworkInterface { }
 
 extension GithubInterfaceable {
     
@@ -23,18 +23,18 @@ extension GithubInterfaceable {
 
 struct GithubUserDirectory: GithubInterfaceable {
     
-    func lookup(username: String) {
-        
+    func lookup(_ username: String) {
+
         get("/users/\(username)") { (data, response, error) in
-            
-            guard let userInfo = self.decodeJSON(fromData: data) else {
+
+            guard let userInfo = self.decodeJSONObject(fromData: data) else {
                 return
             }
-            
+
             print("--------------------------------------------------")
-            
+
             for info in userInfo {
-                print("\(info.0) - \(info.1)")
+                print("\(info.key) - \(info.value)")
             }
         }
     }
